@@ -218,19 +218,112 @@ header p {
 }
 
 /* ============================================
-   FOOTER / INSTRUCTIONS
+   INTEL INSIDE BANNER
+   ============================================ */
+
+.intel-inside-banner {
+  background-image: url('img/computer 1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dark overlay to darken the image */
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.intel-inside-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Banner Text */
+.banner-text {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   FOOTER
    ============================================ */
 
 .timeline-footer {
   background-color: #003DA5;
   color: white;
-  text-align: center;
-  padding: 25px 20px;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 50px 20px;
+  font-size: 0.9rem;
 }
 
-.timeline-footer p {
+/* Primary Navigation Links */
+.footer-primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 35px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Secondary Navigation Links */
+.footer-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+}
+
+/* Footer Links */
+.footer-link {
+  color: white;
+  text-decoration: none;
+  transition: font-weight 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Primary links bolden on hover */
+.primary-link:hover {
+  font-weight: 700;
+}
+
+/* Footer Disclaimer */
+.footer-disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.footer-disclaimer p {
   margin: 0;
 }
 
@@ -286,6 +379,36 @@ header p {
 
   .card-description {
     font-size: 0.9rem;
+  }
+
+  /* Footer adjustments for mobile */
+  .footer-primary {
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-secondary {
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.75rem;
+  }
+
+  /* Intel Inside Banner adjustments for mobile */
+  .intel-inside-banner {
+    min-height: 200px;
+  }
+
+  .banner-text {
+    font-size: 1.8rem;
   }
 }
 
