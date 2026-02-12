@@ -1,1 +1,320 @@
-/* Add your CSS here */
+/* ============================================
+   INTEL SUSTAINABILITY TIMELINE - STYLESHEET
+   ============================================ */
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ============================================
+   HEADER / HERO SECTION
+   ============================================ */
+
+header.hero {
+  background-image: url('img/intel background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Dark overlay for better text readability */
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 113, 197, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Intel Logo Styling */
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   TIMELINE SECTION - FLEXBOX LAYOUT
+   ============================================ */
+
+.timeline-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  width: 100%;
+  
+  /* Horizontal scrolling on desktop */
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+/* Custom scrollbar styling for better appearance */
+.timeline-container::-webkit-scrollbar {
+  height: 12px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #0071C5;
+  border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #004a8f;
+}
+
+/* Timeline Card Styling */
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  min-width: 320px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  
+  /* Initial state - show minimal content */
+}
+
+/* Card Image Container */
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #ecf0f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Card Content Container */
+.card-content {
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card Year Styling */
+.card-year {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0071C5;
+  margin-bottom: 8px;
+}
+
+/* Card Title Styling */
+.card-title {
+  font-size: 1.3rem;
+  color: #003DA5;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Card Description - Hidden by default, shown on hover */
+.card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Hover Effects */
+.timeline-card:hover {
+  border-color: #0071C5;
+  box-shadow: 0 12px 30px rgba(0, 113, 197, 0.2);
+  transform: translateY(-8px);
+  background: white;
+}
+
+.timeline-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.timeline-card:hover .card-description {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* ============================================
+   FOOTER / INSTRUCTIONS
+   ============================================ */
+
+.timeline-footer {
+  background-color: #003DA5;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.timeline-footer p {
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Header adjustments for mobile */
+  header.hero {
+    padding: 50px 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  /* Timeline becomes vertical on mobile */
+  .timeline-container {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: auto;
+    gap: 20px;
+    max-height: 700px;
+  }
+
+  .timeline-container::-webkit-scrollbar {
+    width: 12px;
+    height: auto;
+  }
+
+  /* Allow cards to be full width on mobile */
+  .timeline-card {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .card-year {
+    font-size: 1.7rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .timeline-card {
+    min-width: 300px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY & ANIMATIONS
+   ============================================ */
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus states for keyboard navigation */
+.timeline-card:focus-visible {
+  outline: 3px solid #0071C5;
+  outline-offset: 2px;
+}
+
+/* Light theme consistency */
+html[data-theme="light"] {
+  color-scheme: light;
+}
