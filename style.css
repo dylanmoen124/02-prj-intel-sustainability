@@ -91,6 +91,7 @@ header p {
   overflow-y: hidden;
   padding: 20px 0;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   max-width: 100%;
   width: 100%;
   
@@ -132,6 +133,8 @@ header p {
   min-width: 320px;
   flex-shrink: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   
   /* Initial state - show minimal content */
 }
@@ -206,6 +209,12 @@ header p {
 .timeline-card:hover .card-description {
   opacity: 1;
   max-height: 200px;
+}
+
+/* Dimmed card state - darkened when another card is hovered */
+.timeline-card.dimmed {
+  opacity: 0.5;
+  filter: brightness(0.8);
 }
 
 /* ============================================

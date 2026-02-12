@@ -182,5 +182,39 @@
   <footer class="timeline-footer">
     <p>Scroll to view timeline | Hover over cards to learn more!</p>
   </footer>
+
+  <!-- JavaScript for hover dimming and scroll snapping -->
+  <script>
+    const timelineContainer = document.querySelector('.timeline-container');
+    const cards = document.querySelectorAll('.timeline-card');
+
+    // Hover effect - darken other cards
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        cards.forEach(otherCard => {
+          if (otherCard !== card) {
+            otherCard.classList.add('dimmed');
+          }
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        cards.forEach(otherCard => {
+          otherCard.classList.remove('dimmed');
+        });
+      });
+    });
+
+    // Snap to card on click
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
