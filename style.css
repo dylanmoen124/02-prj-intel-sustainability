@@ -17,6 +17,31 @@ body {
 }
 
 /* ============================================
+   TOP NAVIGATION LOGO
+   ============================================ */
+
+.nav-logo-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-link:hover {
+  transform: scale(1.1);
+}
+
+.nav-logo {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  background-color: #000000;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* ============================================
    HEADER / HERO SECTION - Intel Branded
    ============================================ */
 
@@ -149,15 +174,15 @@ header p {
 .timeline-card {
   display: flex;
   flex-direction: column;
-  background: white;
-  border: 2px solid #e0e0e0;
+  background: #E8F4FA;
+  border: 2px solid #B3D9F2;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s ease;
-  min-width: 320px;
+  min-width: 120px;
   flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 113, 197, 0.12);
   scroll-snap-align: start;
   scroll-snap-stop: always;
   
@@ -167,7 +192,7 @@ header p {
 /* Card Image Container */
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 360px;
   overflow: hidden;
   background-color: #ecf0f8;
   display: flex;
@@ -184,8 +209,8 @@ header p {
 
 /* Card Content Container */
 .card-content {
-  padding: 25px;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  padding: 12px;
+  background: linear-gradient(135deg, #E8F4FA 0%, #D4EBFC 100%);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -194,25 +219,25 @@ header p {
 
 /* Card Year Styling */
 .card-year {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #0071C5;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 /* Card Title Styling */
 .card-title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #003DA5;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
 /* Card Description - Hidden by default, shown on hover */
 .card-description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.5;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -222,9 +247,9 @@ header p {
 /* Hover Effects */
 .timeline-card:hover {
   border-color: #0071C5;
-  box-shadow: 0 12px 30px rgba(0, 113, 197, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 113, 197, 0.3);
   transform: translateY(-8px);
-  background: white;
+  background: #D4EBFC;
 }
 
 .timeline-card:hover .card-image img {
@@ -357,6 +382,17 @@ header p {
    ============================================ */
 
 @media (max-width: 768px) {
+  /* Top navigation logo - smaller on mobile */
+  .nav-logo-link {
+    top: 15px;
+    left: 15px;
+  }
+
+  .nav-logo {
+    width: 45px;
+    padding: 6px;
+  }
+
   /* Header adjustments for mobile - maintain brand impact */
   header.hero {
     min-height: 450px;
@@ -396,6 +432,15 @@ header p {
   .timeline-card {
     min-width: 100%;
     width: 100%;
+  }
+
+  /* Keep mobile card dimensions compact */
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 20px;
   }
 
   .card-year {
@@ -446,6 +491,11 @@ header p {
    ============================================ */
 
 @media (max-width: 1024px) {
+  /* Top navigation logo - tablet size */
+  .nav-logo {
+    width: 55px;
+  }
+
   /* Tablet adjustments */
   header h1 {
     font-size: 3rem;
