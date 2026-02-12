@@ -17,22 +17,27 @@ body {
 }
 
 /* ============================================
-   HEADER / HERO SECTION
+   HEADER / HERO SECTION - Intel Branded
    ============================================ */
 
 header.hero {
   background-image: url('img/intel background.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
-  padding: 80px 20px;
+  min-height: 600px;
+  padding: 100px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
   overflow: hidden;
 }
 
-/* Dark overlay for better text readability */
+/* Intel blue overlay for brand consistency and text contrast */
 header.hero::before {
   content: '';
   position: absolute;
@@ -40,37 +45,57 @@ header.hero::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 113, 197, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 61, 165, 0.7) 0%,
+    rgba(0, 113, 197, 0.6) 50%,
+    rgba(0, 61, 165, 0.7) 100%
+  );
   z-index: 1;
 }
 
+/* Content container with proper z-index */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-/* Intel Logo Styling */
+/* Intel Logo - Professional sizing and placement */
 .logo {
-  width: 120px;
+  width: 160px;
   height: auto;
-  margin-bottom: 30px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  margin-bottom: 40px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.1);
+  transition: transform 0.3s ease;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Main Headline - Bold and impactful */
 header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
 }
 
+/* Subheading - Clear and readable with proper contrast */
 header p {
-  font-size: 1.2rem;
-  max-width: 700px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 800px;
   margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================
@@ -332,21 +357,25 @@ header p {
    ============================================ */
 
 @media (max-width: 768px) {
-  /* Header adjustments for mobile */
+  /* Header adjustments for mobile - maintain brand impact */
   header.hero {
-    padding: 50px 20px;
+    min-height: 450px;
+    padding: 60px 20px;
   }
 
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
   }
 
   header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .logo {
-    width: 80px;
+    width: 100px;
+    margin-bottom: 30px;
   }
 
   /* Timeline becomes vertical on mobile */
@@ -417,8 +446,17 @@ header p {
    ============================================ */
 
 @media (max-width: 1024px) {
+  /* Tablet adjustments */
   header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 1.25rem;
+  }
+
+  .logo {
+    width: 140px;
   }
 
   .timeline-card {
